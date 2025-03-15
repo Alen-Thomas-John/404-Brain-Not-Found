@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Background image (60% of the screen) -->
+    <div class="background-container">
+        <div class="search-container">
+            <input type="text" placeholder="Search for tourist spots..." class="search-bar">
+        </div>
+    </div>
+
+    <!-- Buttons (40% of the screen with tinted black background) -->
+    <div class="buttons-container">
+        <div class="row">
+            <button class="btn">Transportation</button>
+            <button class="btn">Accommodation</button>
+        </div>
+        <button class="btn full-width">Food</button>
+    </div>
+
+</body>
+</html>

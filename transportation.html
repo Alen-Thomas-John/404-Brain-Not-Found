@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide Rentals</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #e6f2e6; margin: 0; padding: 0; }
+        header { background-color: #4CAF50; color: #fff; padding: 20px; text-align: center; }
+        .container { padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background-color: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 15px; }
+        .card h2 { color: #4CAF50; }
+        .button { background-color: #4CAF50; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        .button:hover { background-color: #45a049; }
+        select { padding: 10px; font-size: 16px; border-radius: 5px; width: 100%; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EcoRide Rentals</h1>
+        <p>Your sustainable transportation partner</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Rent a Vehicle</h2>
+            <p>Choose from our eco-friendly options:</p>
+            <select id="vehicleSelect">
+                <option value="bicycle">🚲 Bicycle</option>
+                <option value="scooter">🛵 Scooter</option>
+                <option value="jeep">🚙 Jeep</option>
+            </select>
+            <button class="button" onclick="exploreRentals()">Explore Rentals</button>
+        </div>
+
+        <div class="card">
+            <h2>List Your Vehicle</h2>
+            <p>Earn money by renting out your vehicle to travelers.</p>
+            <ul>
+                <li>✅ Extra profit through commissions</li>
+                <li>✅ Recommended for electric vehicles</li>
+                <li>✅ Safety with deposit insurance and damage coverage</li>
+            </ul>
+            <button class="button">Get Started</button>
+        </div>
+
+        <div class="card">
+            <h2>Support System</h2>
+            <p>We ensure fair damage cost handling, insurance, and easy claims for all parties involved.</p>
+            <button class="button">Learn More</button>
+        </div>
+    </div>
+
+    <script>
+        function exploreRentals() {
+            const vehicle = document.getElementById("vehicleSelect").value;
+            alert("You selected: " + vehicle);
+        }
+    </script>
+</body>
+</html>

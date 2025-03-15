@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Restaurants</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Profile Button -->
+    <header>
+        <a href="profile.html" class="profile-btn">Profile</a>
+    </header>
+
+    <!-- Background section -->
+    <div class="background-container">
+        <div class="search-container">
+            <input type="text" placeholder="Search for eco-friendly restaurants..." class="search-bar">
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content-container">
+        <h1>Choose Your Sustainable Meal</h1>
+
+        <!-- Filters -->
+        <div class="filters">
+            <select id="price-filter">
+                <option value="">Filter by Price</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+
+            <select id="rating-filter">
+                <option value="">Filter by Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+            </select>
+        </div>
+
+        <!-- List of Restaurants -->
+        <div class="restaurants">
+            <div class="restaurant-card" data-price="20">
+                <img src="images/hotel1.jpg" alt="Eco Restaurant">
+                <h2>Green Bites Café</h2>
+                <p>📍 Location: New York, USA</p>
+                <p>Avg Meal Price: $20</p>
+                <button class="order-btn" onclick="openOrderPopup(this)">Order Now</button>
+            </div>
+
+            <div class="restaurant-card" data-price="15">
+                <img src="images/hotel2.jpg" alt="Eco Restaurant">
+                <h2>Solar Kitchen</h2>
+                <p>📍 Location: California, USA</p>
+                <p>Avg Meal Price: $15</p>
+                <button class="order-btn" onclick="openOrderPopup(this)">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Order Popup -->
+        <div id="order-popup" class="popup">
+            <div class="popup-content">
+                <h2>Place Your Order</h2>
+                <label>Select Meal:</label>
+                <input type="text" id="meal-name" placeholder="Meal Name">
+
+                <label>Quantity:</label>
+                <input type="number" id="meal-quantity" min="1" value="1" oninput="updateTotalPrice()">
+
+                <p id="order-total">Total: $0</p>
+
+                <button onclick="confirmOrder()">Confirm Order</button>
+                <button onclick="closeOrderPopup()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- "List Your Restaurant" Button -->
+        <button class="list-food-btn" onclick="openRestaurantPopup()">List Your Restaurant</button>
+
+        <!-- Popup Form for Listing Restaurants -->
+        <div id="restaurant-popup" class="popup">
+            <div class="popup-content">
+                <h2>List Your Restaurant</h2>
+                <input type="text" id="restaurant-name" placeholder="Restaurant Name">
+                <input type="text" id="restaurant-location" placeholder="Location">
+                <input type="text" id="restaurant-price" placeholder="Avg Meal Price ($)">
+                <input type="file" id="restaurant-image">
+                <button onclick="submitRestaurant()">Submit</button>
+                <button onclick="closeRestaurantPopup()">Close</button>
+            </div>
+        </div>
+
+        <!-- Rewards Section -->
+        <div class="rewards">
+            <h3>Your Eco-Coins: <span id="eco-coins">200</span></h3>
+            <p>Earn Eco-Coins for every sustainable meal order!</p>
+        </div>
+    </div>
+
+    <script src="food.js"></script>
+</body>
+</html>

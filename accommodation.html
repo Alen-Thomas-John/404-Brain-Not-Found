@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Accommodation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Profile Button -->
+    <header>
+        <a href="profile.html" class="profile-btn">Profile</a>
+    </header>
+
+    <!-- Background section -->
+    <div class="background-container">
+        <div class="search-container">
+            <input type="text" placeholder="Search for eco-friendly stays..." class="search-bar">
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content-container">
+        <h1>Choose Your Sustainable Stay</h1>
+
+        <!-- Filters -->
+        <div class="filters">
+            <select id="price-filter">
+                <option value="">Filter by Price</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+
+            <select id="rating-filter">
+                <option value="">Filter by Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+            </select>
+        </div>
+
+        <!-- List of accommodations -->
+        <div class="accommodations">
+            <div class="accommodation-card" data-price="120">
+                <img src="images/hotel1.jpg" alt="Eco Hotel">
+                <h2>Green Leaf Resort</h2>
+                <p>📍 Location: New York, USA</p>
+                <p>Price: $120/night</p>
+                <button class="book-btn" onclick="openBookingPopup(this)">Book Now</button>
+            </div>
+
+            <div class="accommodation-card" data-price="95">
+                <img src="images/hotel2.jpg" alt="Eco Hotel">
+                <h2>Solar Haven</h2>
+                <p>📍 Location: California, USA</p>
+                <p>Price: $95/night</p>
+                <button class="book-btn" onclick="openBookingPopup(this)">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Booking Popup -->
+        <div id="booking-popup" class="popup">
+            <div class="popup-content">
+                <h2>Book Your Stay</h2>
+                <label>Check-in Date:</label>
+                <input type="date" id="check-in-date">
+
+                <label>Number of Nights:</label>
+                <input type="number" id="num-nights" min="1" value="1" oninput="updateTotalPrice()">
+
+                <p id="total-price">Total: $0</p>
+
+                <button onclick="confirmBooking()">Confirm Booking</button>
+                <button onclick="closeBookingPopup()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- "List Your Stay" Button -->
+        <button class="list-stay-btn" onclick="openPopup()">List Your Stay</button>
+
+        <!-- Popup Form for Listing Stays -->
+        <div id="popup-form" class="popup">
+            <div class="popup-content">
+                <h2>List Your Stay</h2>
+                <input type="text" id="hotel-name" placeholder="Hotel Name">
+                <input type="text" id="hotel-location" placeholder="Location">
+                <input type="text" id="hotel-price" placeholder="Price per Night ($)">
+                <input type="text" id="hotel-phone" placeholder="Phone Number">
+                <input type="file" id="hotel-image">
+                <button onclick="submitHotel()">Submit</button>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+        <!-- Rewards Section -->
+        <div class="rewards">
+            <h3>Your Eco-Coins: <span id="eco-coins">200</span></h3>
+            <p>Earn Eco-Coins for every eco-friendly booking!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
